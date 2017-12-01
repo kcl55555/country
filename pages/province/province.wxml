@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+	<block wx:if="{{istrue}}">
+		<block wx:for="{{province}}" >
+	  <view class="city"  data-cityid="{{index}}" bindtap="selectcity" wx:if="{{item.n==province_now}}">{{item.n}}已选地区</view>
+		</block>
+		<block wx:for="{{province}}" >
+	  <view class="city"  data-cityid="{{index}}" bindtap="selectcity" wx:if="{{item.n!=province_now}}">{{item.n}}</view>
+		</block>
+	</block>
+	<block wx:else>
+	<block wx:for="{{province}}" >
+  <view class="city"  data-cityid="{{index}}" bindtap="selectcity">{{item.n}}</view>
+	</block>
+	</block>
+</view>
